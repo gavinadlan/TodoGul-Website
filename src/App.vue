@@ -3,9 +3,11 @@
     <HeaderSection />
     <HeroSection />
     <AboutSection />
-    <ServicesSection />
-    <TestimonialSection />
+    <FeaturesSection />
+    <ReviewSection />
+    <!-- Updated to ReviewSection -->
     <ContactSection />
+    <FooterSection />
   </div>
 </template>
 
@@ -13,18 +15,20 @@
 import HeaderSection from "./components/HeaderSection.vue";
 import HeroSection from "./components/HeroSection.vue";
 import AboutSection from "./components/AboutSection.vue";
-import ServicesSection from "./components/ServicesSection.vue";
-import TestimonialSection from "./components/TestimonialSection.vue";
+import FeaturesSection from "./components/FeaturesSection.vue";
+import ReviewSection from "./components/ReviewSection.vue"; // Correct import
 import ContactSection from "./components/ContactSection.vue";
+import FooterSection from "./components/FooterSection.vue";
 
 export default {
   components: {
     HeaderSection,
     HeroSection,
     AboutSection,
-    ServicesSection,
-    TestimonialSection,
+    FeaturesSection,
+    ReviewSection, // Correct component registration
     ContactSection,
+    FooterSection,
   },
 };
 </script>
