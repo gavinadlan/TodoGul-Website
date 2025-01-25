@@ -66,8 +66,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  padding: 40px;
+  height: auto; /* Hilangkan fixed height agar elemen bisa menyesuaikan */
+  padding: 40px 20px; /* Kurangi padding di layar kecil */
   background-color: #f8f9ff;
   box-sizing: border-box;
   text-align: center;
@@ -79,8 +79,8 @@ export default {
 }
 
 h2 {
-  font-size: 3rem;
-  color: #8875ff;
+  font-size: 3rem; /* Tetap besar untuk tampilan utama */
+  color: #8875ff; /* Tidak diubah, tetap warna ungu */
   margin-bottom: 20px;
   font-weight: bold;
   opacity: 0; /* Initially hidden */
@@ -89,13 +89,9 @@ h2 {
 }
 
 .description {
-  font-size: 1.25rem;
-  color: #555;
-  margin-bottom: 40px;
-  line-height: 1.8;
-  opacity: 0; /* Initially hidden */
-  transform: translateY(50px); /* Start from below */
-  transition: opacity 1s ease, transform 1s ease;
+  font-size: 1rem; /* Ukuran lebih kecil agar lebih rapi */
+  margin-bottom: 30px;
+  line-height: 1.6; /* Line height lebih kecil untuk layar kecil */
 }
 
 .features-container {
@@ -106,7 +102,7 @@ h2 {
 }
 
 .feature-card {
-  flex: 1 1 calc(33.333% - 20px);
+  flex: 1 1 calc(33.333% - 20px); /* Tiga kolom untuk desktop */
   background-color: white;
   padding: 20px;
   border-radius: 10px;
@@ -133,8 +129,40 @@ h3 {
   margin: 10px 0 0;
 }
 
+/* Animations */
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0); /* Move to original position */
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .features-container {
+    gap: 15px;
+  }
+
+  .feature-card {
+    flex: 1 1 calc(50% - 15px); /* Dua kolom untuk tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem; /* Hanya ukuran font yang berubah untuk ponsel */
+  }
+
+  .description {
+    font-size: 0.9rem; /* Ukuran lebih kecil */
+    line-height: 1.5; /* Jarak antar baris lebih kecil */
+  }
+
+  .features-container {
+    gap: 10px; /* Kurangi jarak antar elemen */
+  }
+
+  .feature-card {
+    flex: 1 1 100%; /* Satu kolom untuk ponsel */
+    padding: 15px; /* Kurangi padding */
+  }
 }
 </style>

@@ -110,8 +110,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  padding: 40px;
+  height: auto; /* Flex height for responsiveness */
+  padding: 40px 20px; /* Padding for responsiveness */
   background-color: #f8f9ff;
   box-sizing: border-box;
   text-align: center;
@@ -124,7 +124,7 @@ export default {
 
 h2 {
   font-size: 3rem;
-  color: #8875ff;
+  color: #8875ff; /* Keep the color as requested */
   margin-bottom: 20px;
   font-weight: bold;
   opacity: 0; /* Initially hidden */
@@ -175,7 +175,7 @@ h2 {
 .review-card cite {
   font-size: 1.125rem;
   font-weight: bold;
-  color: #8875ff;
+  color: #8875ff; /* Keep the color as requested */
 }
 
 .stars {
@@ -209,5 +209,31 @@ h2 {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0); /* Move to original position */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .reviews-container {
+    flex-direction: column; /* Stack cards vertically on smaller screens */
+    align-items: center;
+  }
+
+  .review-card {
+    flex: 1 1 100%; /* Full width cards */
+    max-width: 90%; /* Slightly reduced max width */
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 2rem; /* Smaller heading on mobile */
+  }
+
+  .description {
+    font-size: 1rem; /* Adjust description font size for smaller screens */
+  }
+
+  .stars {
+    font-size: 1.25rem; /* Smaller star icons for mobile */
+  }
 }
 </style>

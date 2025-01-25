@@ -13,10 +13,7 @@
       >
     </div>
     <div class="image-container">
-      <img
-        src="@/assets/Iphonetodogul.png"
-        alt="iPhone dengan aplikasi Todogul"
-      />
+      <img src="@/assets/Iphonetodogul.png" alt="iPhone with Todogul app" />
     </div>
   </section>
 </template>
@@ -35,7 +32,7 @@ export default {
   height: 100vh;
   padding: 2rem;
   box-sizing: border-box;
-  opacity: 0; /* Initial state hidden */
+  opacity: 0;
   animation: fadeIn 1s ease-out forwards;
 }
 
@@ -46,13 +43,13 @@ export default {
 
 .title {
   font-size: 3rem;
-  color: #8875ff; /* Ungu */
+  color: #8875ff;
   margin: 0;
 }
 
 .subtitle {
   font-size: 1.5rem;
-  color: #444; /* Abu-abu gelap */
+  color: #444;
   margin: 1rem 0;
 }
 
@@ -64,12 +61,12 @@ export default {
   border-radius: 8px;
   font-size: 1.25rem;
   cursor: pointer;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #6653cc; /* Warna ungu lebih gelap saat hover */
+  background-color: #6653cc;
 }
 
 .image-container {
@@ -110,6 +107,47 @@ export default {
   }
   to {
     transform: translateX(0);
+  }
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    align-items: center; /* Elemen di tengah */
+    gap: 1rem; /* Jarak antar elemen */
+  }
+
+  .content {
+    max-width: 90%;
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .image-container {
+    max-width: 80%; /* Ukuran gambar */
+    margin-top: -2rem; /* Naikkan gambar dengan negative margin */
+    margin-bottom: 0; /* Pastikan tidak ada jarak bawah */
+  }
+
+  .image-container img {
+    width: 100%;
   }
 }
 </style>
